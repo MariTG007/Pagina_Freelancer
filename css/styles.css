@@ -16,19 +16,43 @@ body{
 .titulo{
     text-align: center;
     font-size: 3.8rem;
-    color: var(--primario);
 }
 .titulo span {
     font-size: 2rem;
 }
 
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 .nav-bg {
     background-color: var(--secundario);
-
 }
 .navegacion-principal{
+    display: flex; /*Habilita opciones para acomodar los links*/
+    flex-direction: column; /*dirección de los elementos(columna o fila)*/
 }
+@media (min-width: 480px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-evenly; /*para distribuir el contenido*/
+    }
+    
+}
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none; /*Esto quita la línea debajo de la palabra que es link*/
+    font-size: 1.7rem;/*Tamaño de letra*/
+    font-weight: 700;/*También se puede poner bold*/
+    padding: 1rem;
+}
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*@media (min-width: 480px ){ lo que este en las llaves se cumple mientras el tamaño sea de 480px y mayor a eso
+    
+}*/
