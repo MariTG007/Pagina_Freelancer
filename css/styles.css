@@ -4,37 +4,24 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
 }
 
+/* Globales **/
 html {
     font-size: 62.5%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Hack para Box Model */
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
 body {
     font-size: 16px;/* 1 rem = 10px*/
     font-family: 'Krub', sans-serif;
-}
-h1 {
-    font-size: 3.8rem;
-}
-h2 {
-    font-size: 2.8rem;
-}
-h3 {
-    font-size: 1.8rem;
-}
-h1,h2,h3 {
-    text-align: center;
-}
-.titulo span {
-    font-size: 2rem;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% ); /* Esta línea es para poner color a toda la página con degradado */
 }
 .contenedor {
-    max-width: 120rem;
+    max-width: 100rem; /* 120rem era el original */
     margin: 0 auto;
 }
 
@@ -57,6 +44,35 @@ h1,h2,h3 {
     }
 }
 
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+}
+
+/* Navegación Principal */
 .nav-bg {
     background-color: var(--secundario);
 }
@@ -85,15 +101,14 @@ h1,h2,h3 {
     color: var(--oscuro);
 }
 
-/*@media (min-width: 480px ){ lo que este en las llaves se cumple mientras el tamaño sea de 480px y mayor a eso
-    
-}*/
+/* Hero */
 .hero {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat; 
     background-size: cover;
     height: 450px;
     position: relative;
+    margin-bottom: 2rem; /* para dejar espacio entre la imagen y el contenedor */
 }
 .contenido-hero {
     position: absolute;
@@ -111,3 +126,19 @@ h1,h2,h3 {
 .contenido-hero p {
     color: var(--blanco);
 }
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Servicios */
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr;  */
+        grid-template-columns: repeat(3,  1fr);
+        column-gap: 1rem; /* Muy parecido a margin va a poner la separación entre columnas */
+    }
+}
+
+
